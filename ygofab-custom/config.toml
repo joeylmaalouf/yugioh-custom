@@ -1,0 +1,7 @@
+# Use this to define local configurations for your project.
+# Any configuration defined here will override its global counterpart.
+# Global configurations are located in `/home/joey/.config/ygofab/config.toml`.
+
+[expansion.ygofab-custom]
+default = true
+recipe = ['ygofab-custom.toml']
