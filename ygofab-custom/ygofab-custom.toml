@@ -2,8 +2,22 @@
 id = 92384675
 name = "Vylett, Underlord of Dark World"
 type = "monster effect link"
+setcode = 0x6
+atk = 2500
+link-arrows = "bottom_left bottom_right"
+link-rating = 2
+race = "Fiend"
+attribute = "Dark"
+category = "draw destroy_hand"
+ot = "OCG TCG"
+effect = '''2 "Dark World" monsters
+If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. "Dark World" monsters this card points to cannot be destroyed by card effects. Once per turn, if a "Dark World" monster this card points to is destroyed by battle: You can discard a card, treating it as though it were discarded by an opponent's card effect.'''
 
 [[card]]
 id = 92384676
 name = "Dark World Vengeance"
 type = "trap continuous"
+setcode = 0x6
+category = "destroy_hand"
+ot = "OCG TCG"
+effect = '''Once per turn, if exactly 1 of your "Dark World" monsters (and no other cards) is destroyed: You can treat that monster as though it were discarded instead.'''
