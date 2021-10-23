@@ -13,19 +13,19 @@ function s.initial_effect(c)
 	local e2 = Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id, 1))
 	e2:SetCategory(CATEGORY_HANDES)
-	e2:SetType(EFFECT_TYPE_ACTIVATE)
+	e2:SetType(EFFECT_TYPE_ACTIVATE + EFFECT_TYPE_FIELD)
 	e2:SetProperty(EFFECT_FLAG_DELAY)
 	e2:SetCode(EVENT_DESTROYED)
+	e2:SetRange(LOCATION_SZONE)
+	e2:SetCountLimit(1)
 	e2:SetCondition(s.condition)
 	e2:SetTarget(s.target)
 	e2:SetOperation(s.operation)
-	e2:SetRange(LOCATION_SZONE)
-	e2:SetCountLimit(1)
+	c:RegisterEffect(e2)
 
 	-- use the effect sometime later, after activation
 	local e3 = e2:Clone()
-	e3:SetType(EFFECT_TYPE_TRIGGER_O)
-	e3:SetRange(LOCATION_SZONE)
+	e3:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_TRIGGER_O)
 	c:RegisterEffect(e3)
 end
 s.listed_series = {0x6}
@@ -40,7 +40,7 @@ end
 function s.target (e, tp, eg, ep, ev, re, r, rp, chk, chkc)
 	if chk == 0 then return true end
 	local g = eg:GetFirst()
-	Duel.SetOperationInfo(0, CATEGORY_HANDES, g, #g, 0, 0)
+	Duel.SetOperationInfo(0, CATEGORY_HANDES, g, 1, 0, 0)
 end
 
 -- so now we can discard the monster instead of letting it be destroyed
@@ -55,3 +55,9 @@ function s.operation (e, tp, eg, ep, ev, re, r, rp)
 		Duel.SendtoGrave(tc, REASON_EFFECT + REASON_DISCARD)
 	end
 end
+
+-- TODO (debug): tc is nil on line 54
+
+-- TODO (functionality): instead of letting it be destroyed then discarding it after,
+-- make it so it's discarded INSTEAD of being destroyed (use supply squad to test that on-destruction effects won't occur)
+-- would this mean it has to be a quick effect instead of a trigger or something? maybe both? find a good example
