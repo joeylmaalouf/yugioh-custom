@@ -7,18 +7,18 @@ link-rating = 2
 link-arrows = "bottom_left bottom_right"
 attribute = "Dark"
 race = "Fiend"
-atk = 2500
+atk = 2400
 effect = '''2 "Dark World" monsters
-If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. "Dark World" monsters this card points to cannot be destroyed by card effects. Once per turn, if a "Dark World" monster this card points to is destroyed by battle: You can discard a card, treating it as though it were discarded by an opponent's card effect.'''
+If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. Once per turn, at the start of the Damage Step, if this card attacks: You can add 1 "Dark World" monster from your Graveyard to your hand. Once per turn, at the start of the Damage Step, if a "Dark World" monster this card points to attacks: You can discard 1 card.'''
 ot = "OCG TCG"
-category = "draw destroy_hand"
+category = "draw destroy_hand send_to_hand"
 
 [[card]]
 id = 92384676
 name = "Dark World Vengeance"
 type = "trap continuous"
 setcode = 0x6
-effect = '''Once per turn, if exactly 1 of your "Dark World" monsters (and no other cards) would be destroyed: You can treat that monster as though it were discarded instead.'''
+effect = '''Once per turn, if exactly 1 of your "Dark World" monsters (and no other cards) would be destroyed: You can return that monster to the hand instead, and if you do, discard 1 card.'''
 ot = "OCG TCG"
-category = "destroy_hand"
+category = "send_to_hand destroy_hand"
 strings = ["Activate only", "Activate and use the effect"]
