@@ -40,9 +40,7 @@ end
 -- note: this is all just specifying what card(s) will be affected, it's unrelated to the special "target" keyword
 function s.target (e, tp, eg, ep, ev, re, r, rp, chk)
 	if chk == 0 then
-		return
-			#eg == 1
-			and eg:IsExists(s.filter, 1, nil, tp)
+		return #eg == 1 and eg:IsExists(s.filter, 1, nil, tp)
 	end
 	if Duel.SelectEffectYesNo(tp, e:GetHandler(), 96) then
 		Duel.SetTargetCard(eg)
@@ -58,7 +56,8 @@ end
 -- we'll get the card we had previously marked as the target and send it to the hand, then have the player discard a card
 function s.operation (e, tp, eg, ep, ev, re, r, rp)
 	local tc = Duel.GetFirstTarget()
-	Duel.SendtoHand(tc, tp, REASON_EFFECT)
+	Duel.SendtoHand(tc, nil, REASON_EFFECT)
+	Duel.ConfirmCards(1 - tp, tc)
 	Duel.ShuffleHand(tp)
 	Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_DISCARD)
 	Duel.DiscardHand(tp, nil, 1, 1, REASON_DISCARD + REASON_EFFECT)
