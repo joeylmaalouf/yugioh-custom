@@ -138,5 +138,3 @@ function s.discard_operation (e, tp, eg, ep, ev, re, r, rp)
 	Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_DISCARD)
 	Duel.DiscardHand(tp, nil, 1, 1, REASON_DISCARD + REASON_EFFECT)
 end
-
--- TODO: why can't Grapha special summon itself by sending this card back? what condition does it not meet?
