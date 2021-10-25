@@ -26,6 +26,7 @@ function s.initial_effect (c)
 	e2:SetCode(EVENT_BATTLED)
 	e2:SetRange(LOCATION_MZONE)
 	e2:SetCountLimit(1)
+	e2:SetCondition(s.retrieve_condition)
 	e2:SetTarget(s.retrieve_target)
 	e2:SetOperation(s.retrieve_operation)
 	c:RegisterEffect(e2)
@@ -91,6 +92,11 @@ function s.draw_operation (e, tp, eg, ep, ev, re, r, rp)
 	end
 end
 
+-- we have to set up a condition for the on attack effect to ensure that this card is the one instigating the battle
+function s.retrieve_condition (e, tp, eg, ep, ev, re, r, rp)
+	return Duel.GetAttacker() == e:GetHandler()
+end
+
 -- the on-attack effect needs a "Dark World" monster that can be sent to hand
 function s.retrieve_filter (c)
 	return s.base_filter(c) and c:IsAbleToHand()
@@ -119,7 +125,7 @@ function s.retrieve_operation (e, tp, eg, ep, ev, re, r, rp)
 	end
 end
 
--- we have to set up a condition for the on-pointed-to attack effect to actually check whether the attacker is pointed to
+-- we have to set up a condition for the on pointed-to attack effect to actually check whether the attacker is pointed to
 function s.discard_condition (e, tp, eg, ep, ev, re, r, rp)
 	local a = Duel.GetAttacker()
 	return a and s.base_filter(a) and a:IsControler(e:GetHandlerPlayer()) and e:GetHandler():GetLinkedGroup():IsContains(a)
