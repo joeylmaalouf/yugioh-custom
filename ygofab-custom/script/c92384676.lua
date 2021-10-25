@@ -1,17 +1,15 @@
 -- Dark World Vengeance
 local s, id = GetID()
 
-function s.initial_effect(c)
-	-- card activation effect
+function s.initial_effect (c)
+	-- effect 1: card activation
 	local e1 = Effect.CreateEffect(c)
-	e1:SetDescription(aux.Stringid(id, 0))
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	c:RegisterEffect(e1)
 
-	-- destruction avoidance effect
+	-- effect 2: destruction avoidance
 	local e2 = Effect.CreateEffect(c)
-	e2:SetDescription(aux.Stringid(id, 1))
 	e2:SetCategory(CATEGORY_HANDES + CATEGORY_TOHAND)
 	e2:SetType(EFFECT_TYPE_CONTINUOUS + EFFECT_TYPE_FIELD)
 	e2:SetProperty(EFFECT_FLAG_DELAY)
@@ -58,10 +56,10 @@ end
 
 -- here we can actually perform the operation we described earlier
 -- we'll get the card we had previously marked as the target and send it to the hand, then have the player discard a card
-function s.operation(e, tp, eg, ep, ev, re, r, rp)
+function s.operation (e, tp, eg, ep, ev, re, r, rp)
 	local tc = Duel.GetFirstTarget()
 	Duel.SendtoHand(tc, tp, REASON_EFFECT)
-	Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_DISCARD)
 	Duel.ShuffleHand(tp)
+	Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_DISCARD)
 	Duel.DiscardHand(tp, nil, 1, 1, REASON_DISCARD + REASON_EFFECT)
 end

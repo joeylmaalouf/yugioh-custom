@@ -7,9 +7,9 @@ link-rating = 2
 link-arrows = "bottom_left bottom_right"
 attribute = "Dark"
 race = "Fiend"
-atk = 2400
+atk = 2100
 effect = '''2 "Dark World" monsters
-If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. Once per turn, at the start of the Damage Step, if this card attacks: You can add 1 "Dark World" monster from your Graveyard to your hand. Once per turn, at the start of the Damage Step, if a "Dark World" monster this card points to attacks: You can discard 1 card.'''
+If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. You can only use this effect of "Vylett, Underlord of Dark World" once per turn. Once per turn, at the start of the Damage Step, if this card attacks: You can add 1 "Dark World" monster from your Graveyard to your hand. Once per turn, at the start of the Damage Step, if a "Dark World" monster this card points to attacks: You can discard 1 card.'''
 ot = "OCG TCG"
 category = "draw destroy_hand send_to_hand"
 
@@ -21,4 +21,3 @@ setcode = 0x6
 effect = '''Once per turn, if exactly 1 face-up "Dark World" monster you control (and no other cards) would be destroyed: You can return that monster to the hand instead, and if you do, discard 1 card.'''
 ot = "OCG TCG"
 category = "send_to_hand destroy_hand"
-strings = ["Activate only", "Activate and use the effect"]
