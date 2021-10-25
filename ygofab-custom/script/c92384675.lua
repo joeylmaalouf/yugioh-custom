@@ -31,10 +31,20 @@ function s.initial_effect (c)
 	c:RegisterEffect(e2)
 
 	-- effect 3: on pointed-to attack, discard
-	-- TODO
+	local e3 = Effect.CreateEffect(c)
+	e3:SetCategory(CATEGORY_HANDES)
+	e3:SetType(EFFECT_TYPE_TRIGGER_O + EFFECT_TYPE_FIELD)
+	e3:SetCode(EVENT_BATTLED)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCountLimit(1)
+	e3:SetCondition(s.discard_condition)
+	e3:SetTarget(s.discard_target)
+	e3:SetOperation(s.discard_operation)
+	c:RegisterEffect(e3)
 end
 
 s.listed_series = {0x6}
+s.listed_names = {id}
 
 -- the event triggers on any successful special summon, so we have to add another condition to make sure it's a link summon
 function s.draw_condition (e, tp, eg, ep, ev, re, r, rp)
@@ -86,7 +96,7 @@ function s.retrieve_filter (c)
 	return s.base_filter(c) and c:IsAbleToHand()
 end
 
--- if any valid targets is available, we'll have the player choose one
+-- if any valid targets are available, we'll have the player choose one
 function s.retrieve_target (e, tp, eg, ep, ev, re, r, rp, chk)
 	if chk == 0 then
 		return Duel.IsExistingTarget(s.retrieve_filter, tp, LOCATION_GRAVE, 0, 1, nil)
@@ -108,3 +118,25 @@ function s.retrieve_operation (e, tp, eg, ep, ev, re, r, rp)
 		Duel.ShuffleHand(tp)
 	end
 end
+
+-- we have to set up a condition for the on-pointed-to attack effect to actually check whether the attacker is pointed to
+function s.discard_condition (e, tp, eg, ep, ev, re, r, rp)
+	local a = Duel.GetAttacker()
+	return a and s.base_filter(a) and a:IsControler(e:GetHandlerPlayer()) and e:GetHandler():GetLinkedGroup():IsContains(a)
+end
+
+-- to discard on a pointed-to-monster's attack, we first need to ensure that we have a nonzero number of cards in hand
+function s.discard_target (e, tp, eg, ep, ev, re, r, rp, chk)
+	if chk == 0 then
+		return Duel.GetFieldGroupCount(tp, LOCATION_HAND, 0) > 0
+	end
+	Duel.SetOperationInfo(0, CATEGORY_HANDES, nil, 0, tp, 1)
+end
+
+-- if the effect goes through, we can ask the player which card they want to discard
+function s.discard_operation (e, tp, eg, ep, ev, re, r, rp)
+	Duel.Hint(HINT_SELECTMSG, tp, HINTMSG_DISCARD)
+	Duel.DiscardHand(tp, nil, 1, 1, REASON_DISCARD + REASON_EFFECT)
+end
+
+-- TODO: why can't Grapha special summon itself by sending this card back? what condition does it not meet?
