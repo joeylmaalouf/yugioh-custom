@@ -1,4 +1,11 @@
 [[card]]
+id = 85742773
+name = "Gravity Well"
+type = "trap continuous"
+effect = '''Rank 4 or higher monsters, or monsters with a Link Rating of 2 or more, cannot attack.'''
+ot = "OCG TCG"
+
+[[card]]
 id = 92384675
 name = "Vylett, Underlord of Dark World"
 type = "monster effect link"
