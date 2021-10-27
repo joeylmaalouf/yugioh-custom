@@ -1,9 +1,18 @@
 [[card]]
+id = 62188963
+name = "Vampire's Battlefield"
+type = "spell field"
+setcode = 0x8e
+effect = '''If your "Vampire" monster destroys an opponent's monster by battle: gain Life Points equal to that destroyed monster's Level/Rank x 500. If your "Vampire" monster is destroyed by battle with an opponent's monster: gain Life Points equal to that destroyed monster's Level/Rank x 200.'''
+ot = "ocg tcg"
+category = "recover_lp"
+
+[[card]]
 id = 85742773
 name = "Gravity Well"
 type = "trap continuous"
 effect = '''Rank 4 or higher monsters, or monsters with a Link Rating of 2 or more, cannot attack.'''
-ot = "OCG TCG"
+ot = "ocg tcg"
 
 [[card]]
 id = 92384675
@@ -17,7 +26,7 @@ race = "Fiend"
 atk = 2100
 effect = '''2 "Dark World" monsters
 If this card is Link Summoned: Draw 2 cards, then discard 1 "Dark World" monster, or, if you do not have any in your hand, banish your entire hand. You can only use this effect of "Vylett, Underlord of Dark World" once per turn. Once per turn, if this card attacks, after damage calculation: You can add 1 "Dark World" monster from your Graveyard to your hand. Once per turn, if a "Dark World" monster this card points to attacks, after damage calculation: You can discard 1 card.'''
-ot = "OCG TCG"
+ot = "ocg tcg"
 category = "draw banish send_to_hand destroy_hand"
 
 [[card]]
@@ -26,5 +35,5 @@ name = "Dark World Vengeance"
 type = "trap continuous"
 setcode = 0x6
 effect = '''Once per turn, if exactly 1 face-up "Dark World" monster you control (and no other cards) would be destroyed: You can return that monster to the hand instead, and if you do, discard 1 card.'''
-ot = "OCG TCG"
+ot = "ocg tcg"
 category = "send_to_hand destroy_hand"
