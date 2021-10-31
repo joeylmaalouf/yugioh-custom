@@ -1,7 +1,22 @@
 [[card]]
+id = 32302079
+name = "Blood Lord Vampire Varney"
+type = "xyz effect monster"
+setcode = 0x8e
+rank = 7
+attribute = "Dark"
+race = "Zombie"
+atk = 2700
+def = 1000
+effect = '''2+ Level 7 monsters
+If you use a monster(s), with a Level, that is owned by your opponent for the Xyz Summon of this card, treat it as Level 7. Once per turn, while your LP are lower than your opponent's: You can detach 2 materials from this card; gain LP equal to the difference.'''
+ot = "ocg tcg"
+category = "recover_lp"
+
+[[card]]
 id = 62188963
 name = "Vampire's Battlefield"
-type = "spell field"
+type = "field spell"
 setcode = 0x8e
 effect = '''If your "Vampire" monster destroys an opponent's monster by battle: gain Life Points equal to that destroyed monster's Level/Rank x 500. If your "Vampire" monster is destroyed by battle with an opponent's monster: gain Life Points equal to that destroyed monster's Level/Rank x 200.'''
 ot = "ocg tcg"
@@ -10,14 +25,14 @@ category = "recover_lp"
 [[card]]
 id = 85742773
 name = "Gravity Well"
-type = "trap continuous"
+type = "continuous trap"
 effect = '''Rank 4 or higher monsters, or monsters with a Link Rating of 2 or more, cannot attack.'''
 ot = "ocg tcg"
 
 [[card]]
 id = 92384675
 name = "Vylett, Underlord of Dark World"
-type = "monster effect link"
+type = "link effect monster"
 setcode = 0x6
 link-rating = 2
 link-arrows = "bottom_left bottom_right"
@@ -32,7 +47,7 @@ category = "draw banish send_to_hand destroy_hand"
 [[card]]
 id = 92384676
 name = "Dark World Vengeance"
-type = "trap continuous"
+type = "continuous trap"
 setcode = 0x6
 effect = '''Once per turn, if exactly 1 face-up "Dark World" monster you control (and no other cards) would be destroyed: You can return that monster to the hand instead, and if you do, discard 1 card.'''
 ot = "ocg tcg"
