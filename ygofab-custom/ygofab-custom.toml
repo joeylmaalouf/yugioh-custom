@@ -23,6 +23,16 @@ ot = "ocg tcg"
 category = "recover_lp"
 
 [[card]]
+id = 84206436
+name = "The Frozen Barrier"
+type = "field spell"
+setcode = 0x2f
+effect = '''(This card is always treated as an "Ice Barrier" card.)
+All WATER Warrior and WATER Spellcaster monsters on the field gain 600 ATK/DEF. Each time your "Ice Barrier" monster(s) is destroyed or banished by your opponent's card effect: place 1 Ice Counter on this card for each of those monsters. Your "Ice Barrier" monsters whose Levels are less than or equal to the number of Ice Counters on this card are unaffected by your opponent's card effects.'''
+ot = "ocg tcg"
+category = "counter_related change_atk_def"
+
+[[card]]
 id = 85742773
 name = "Gravity Well"
 type = "continuous trap"
