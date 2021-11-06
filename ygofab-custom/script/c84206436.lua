@@ -38,7 +38,14 @@ function s.initial_effect (c)
 	c:RegisterEffect(e5)
 
 	-- effect 6: "Ice Barrier" monster protection based on counter count
-	-- TODO
+	local e6 = Effect.CreateEffect(c)
+	e6:SetType(EFFECT_TYPE_FIELD)
+	e6:SetCode(EFFECT_IMMUNE_EFFECT)
+	e6:SetRange(LOCATION_FZONE)
+	e6:SetTargetRange(LOCATION_MZONE, 0)
+	e6:SetTarget(s.immunity_target)
+	e6:SetValue(s.immunity_filter)
+	c:RegisterEffect(e6)
 end
 
 s.listed_series = {0x2f}
@@ -66,4 +73,19 @@ function s.counter_operation (e, tp, eg, ep, ev, re, r, rp)
 	if ct > 0 then
 		e:GetHandler():AddCounter(0x1015, ct)
 	end
+end
+
+-- the only monsters that should be immune are your "Ice Barrier" monsters with a level <= the number of Ice Counters on this card
+function s.immunity_target (e, c)
+	return
+		c:IsControler(e:GetHandlerPlayer())
+		and c:IsSetCard(0x2f)
+		and c:IsType(TYPE_MONSTER)
+		and c:GetLevel() > 0
+		and c:GetLevel() <= e:GetHandler():GetCounter(0x1015)
+end
+
+-- the only effects your cards should be immune to are ones belonging to your opponent
+function s.immunity_filter (e, re)
+	return re:GetOwnerPlayer() == 1 - e:GetHandlerPlayer()
 end
