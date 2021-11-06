@@ -38,7 +38,12 @@ s.listed_series = {0x8e}
 -- check whether one of your face-up "Vampire" monsters just destroyed an opponent's monster by battle
 function s.kill_recover_condition (e, tp, eg, ep, ev, re, r, rp)
 	local tc = eg:GetFirst()
-	return tc:IsControler(tp) and tc:IsFaceup() and tc:IsSetCard(0x8e) and tc:IsRelateToBattle() and tc:IsStatus(STATUS_OPPO_BATTLE)
+	return
+		tc:IsControler(tp)
+		and tc:IsFaceup()
+		and tc:IsSetCard(0x8e)
+		and tc:IsRelateToBattle()
+		and tc:IsStatus(STATUS_OPPO_BATTLE)
 end
 
 -- if the destroyed monster has a level or rank, we'll calculate the heal amount based on that
@@ -74,7 +79,13 @@ end
 -- check whether one of your "Vampire" monsters was destroyed by battle with an enemy monster
 function s.death_recover_filter (c, tp)
 	local rc = c:GetReasonCard()
-	return c:GetPreviousControler() == tp and c:IsSetCard(0x8e) and c:IsReason(REASON_BATTLE) and rc and rc:IsControler(1 - tp) and rc:IsRelateToBattle()
+	return
+		c:GetPreviousControler() == tp
+		and c:IsSetCard(0x8e)
+		and c:IsReason(REASON_BATTLE)
+		and rc
+		and rc:IsControler(1 - tp)
+		and rc:IsRelateToBattle()
 end
 
 -- if any cards in the event group match our filter, we can continue onwards

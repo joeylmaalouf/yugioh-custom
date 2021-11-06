@@ -5,3 +5,17 @@
 [expansion.ygofab-custom]
 default = true
 recipe = ['ygofab-custom.toml']
+
+[picset.regular]
+# default = true
+mode = 'proxy'
+size = '256x'
+ext = 'png'
+field = true
+
+[picset.anime]
+default = true
+mode = 'anime'
+size = '256x'
+ext = 'png'
+field = true
