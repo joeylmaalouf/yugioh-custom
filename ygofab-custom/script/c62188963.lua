@@ -67,7 +67,7 @@ end
 -- on kill, the target is the opponent's monster and the multiplier is higher
 function s.kill_recover_target (e, tp, eg, ep, ev, re, r, rp, chk)
 	local tc = eg:GetFirst():GetBattleTarget()
-	return s.recover_target(tp, tc, 500, chk)
+	return s.recover_target(tp, tc, 400, chk)
 end
 
 -- recover the calculated amount of life points

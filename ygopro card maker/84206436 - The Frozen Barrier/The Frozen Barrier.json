@@ -4,7 +4,7 @@
     "name": "The Frozen Barrier",
     "level": 0,
     "type": "Spell Card",
-    "effect": "(This card is always treated as an \"Ice Barrier\" card.)\nAll WATER Warrior and WATER Spellcaster monsters on the field gain 600 ATK/DEF. Each time your \"Ice Barrier\" monster(s) is destroyed or banished by your opponent's card effect: place 1 Ice Counter on this card for each of those monsters. Your \"Ice Barrier\" monsters whose Levels are less than or equal to the number of Ice Counters on this card are unaffected by your opponent's card effects.",
+    "effect": "(This card is always treated as an \"Ice Barrier\" card.)\nAll WATER Warrior and WATER Spellcaster monsters on the field gain 600 ATK/DEF. Each time your \"Ice Barrier\" monster(s) is destroyed or banished by your opponent's card effect: place 2 Ice Counters on this card for each of those monsters. Your \"Ice Barrier\" monsters whose Levels are less than or equal to the number of Ice Counters on this card are unaffected by your opponent's card effects.",
     "atk": "",
     "def": "",
     "serial": "84206436",

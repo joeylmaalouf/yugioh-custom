@@ -71,7 +71,7 @@ end
 function s.counter_operation (e, tp, eg, ep, ev, re, r, rp)
 	local ct = eg:FilterCount(s.counter_filter, nil, tp)
 	if ct > 0 then
-		e:GetHandler():AddCounter(0x1015, ct)
+		e:GetHandler():AddCounter(0x1015, ct * 2)
 	end
 end
 

@@ -4,7 +4,7 @@
     "name": "Vampire's Battlefield",
     "level": 0,
     "type": "Spell Card",
-    "effect": "If your \"Vampire\" monster destroys an opponent's monster by battle: gain Life Points equal to that destroyed monster's Level/Rank x 500. If your \"Vampire\" monster is destroyed by battle with an opponent's monster: gain Life Points equal to that destroyed monster's Level/Rank x 200.",
+    "effect": "If your \"Vampire\" monster destroys an opponent's monster by battle: gain Life Points equal to that destroyed monster's Level/Rank x 400. If your \"Vampire\" monster is destroyed by battle with an opponent's monster: gain Life Points equal to that destroyed monster's Level/Rank x 200.",
     "atk": "",
     "def": "",
     "serial": "62188963",
