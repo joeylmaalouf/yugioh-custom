@@ -26,7 +26,7 @@ function s.initial_effect (c)
 	e3:SetCode(EFFECT_UPDATE_DEFENSE)
 	c:RegisterEffect(e3)
 
-	-- effect 4/5: counter gain from opponent card effect destruction/banishment
+	-- effects 4/5: counter gain from opponent card effect destruction/banishment
 	local e4 = Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_CONTINUOUS + EFFECT_TYPE_FIELD)
 	e4:SetCode(EVENT_DESTROYED)
