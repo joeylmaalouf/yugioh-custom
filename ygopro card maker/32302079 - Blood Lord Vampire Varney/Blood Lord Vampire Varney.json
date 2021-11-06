@@ -11,8 +11,7 @@
     "copyright": "© 1996 KAZUKI TAKAHASHI",
     "id": "",
     "attribute": "Dark",
-    "pendulum":
-    {
+    "pendulum": {
         "enabled": false,
         "effect": "",
         "blue": "5",
@@ -21,8 +20,7 @@
         "boxSizeEnabled": false
     },
     "variant": "Normal",
-    "link":
-    {
+    "link": {
         "topLeft": false,
         "topCenter": false,
         "topRight": false,

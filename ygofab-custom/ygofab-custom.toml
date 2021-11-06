@@ -40,6 +40,21 @@ effect = '''Rank 4 or higher monsters, or monsters with a Link Rating of 2 or mo
 ot = "ocg tcg"
 
 [[card]]
+id = 85967161
+name = "Aromaseraphy Bergamot"
+type = "link effect monster"
+setcode = 0xc9
+link-rating = 3
+link-arrows = "bottom_left bottom bottom_right"
+attribute = "Light"
+race = "Plant"
+atk = 0
+effect = '''3 Plant monsters
+While your LP are higher than your opponent's, this card gains ATK equal to the difference. If a monster(s) is Normal or Special Summoned to a zone this card points to: Gain 1000 LP.'''
+ot = "ocg tcg"
+category = "recover_lp change_atk_def"
+
+[[card]]
 id = 92384675
 name = "Vylett, Underlord of Dark World"
 type = "link effect monster"
